@@ -72,10 +72,6 @@ jobs:
             cargo install "$plugin"
           done
 
-          # Verify installations
-          mdbook --version
-          cargo list | grep mdbook
-
       - name: Build Docs in English
         env:
           SCCACHE_GHA_ENABLED: "true"
