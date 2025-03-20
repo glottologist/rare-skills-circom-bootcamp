@@ -1,0 +1,95 @@
+name: Documentation
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - "docs/**"
+  pull_request:
+    branches:
+      - main
+    paths:
+      - "docs/**"
+
+env:
+  CARGO_TERM_COLOR: always
+
+defaults:
+  run:
+    working-directory: ./docs
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pages: write
+      deployments: write
+      id-token: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Install Gettext
+        run: sudo apt install gettext
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+            libssl-dev \
+            pkg-config
+
+          export PKG_CONFIG_ALLOW_CROSS=1
+
+      - name: Install Rust
+        uses: dtolnay/rust-toolchain@nightly
+
+      - name: Run sccache-cache
+        uses: mozilla-actions/sccache-action@v0.0.5
+
+      - name: Install mdbook
+        env:
+          SCCACHE_GHA_ENABLED: "true"
+          RUSTC_WRAPPER: "sccache"
+        run: cargo install mdbook --locked --version 0.4.35
+        shell: bash
+
+      - name: Install mdBook plugins
+        run: |
+          MDBOOK_PLUGINS=(
+            "mdbook-toc"
+            "mdbook-mermaid"
+            "mdbook-i18n-helpers"
+            "mdbook-katex"
+          )
+
+          # Install each plugin using cargo
+          for plugin in "${MDBOOK_PLUGINS[@]}"; do
+            echo "Installing $plugin..."
+            cargo install "$plugin"
+          done
+
+          # Verify installations
+          mdbook --version
+          cargo list | grep mdbook
+
+      - name: Build Docs in English
+        env:
+          SCCACHE_GHA_ENABLED: "true"
+          RUSTC_WRAPPER: "sccache"
+        run: mdbook build -d book
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./docs/book
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: ./docs/book

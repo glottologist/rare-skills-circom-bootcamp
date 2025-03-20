@@ -71,6 +71,8 @@
             mdbook
             mdbook-i18n-helpers
             mdbook-mermaid
+            mdbook-toc
+            mdbook-katex
           ];
           enterShell = ''
             git --version
