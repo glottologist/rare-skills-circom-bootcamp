@@ -17,6 +17,7 @@
     flake-utils.url = "github:numtide/flake-utils";
     foundry.url = "github:shazow/foundry.nix";
     foundry.inputs.nixpkgs.follows = "nixpkgs";
+    jupyenv.url = "github:tweag/jupyenv";
     nixpkgs-terraform.url = "github:stackbuilders/nixpkgs-terraform";
   };
 
@@ -38,6 +39,7 @@
     flake-utils,
     nixpkgs,
     devenv-root,
+    jupyenv,
     ...
   }:
     flake-parts.lib.mkFlake {inherit inputs;} {
@@ -54,7 +56,22 @@
         pkgs,
         system,
         ...
-      }: rec {
+      }: let
+        inherit (jupyenv.lib.${system}) mkJupyterlabNew;
+        jupyterlab = mkJupyterlabNew ({...}: {
+          nixpkgs = inputs.nixpkgs;
+          imports = [(import ./kernels.nix)];
+        });
+      in {
+        packages = {inherit jupyterlab;};
+        packages.default = jupyterlab;
+        apps.default = let
+          jupyterPath = "${jupyterlab}/bin/jupyter-lab";
+        in {
+          type = "app";
+          program = jupyterPath;
+        };
+
         devenv.shells.default = {
           devenv.root = let
             devenvRootFileContent = builtins.readFile devenv-root.outPath;
@@ -68,11 +85,20 @@
             udev
             pkg-config
             circom
+            slither-analyzer
+            solc
             mdbook
             mdbook-i18n-helpers
             mdbook-mermaid
             mdbook-toc
             mdbook-katex
+            python312Packages.numpy
+            python312Packages.scipy
+            python312Packages.sympy
+            python312Packages.ecpy
+            python312Packages.py-ecc
+            python312Packages.web3
+            python312Packages.jsonschema
           ];
           enterShell = ''
             git --version
@@ -82,6 +108,7 @@
             mdbook --version
           '';
           languages = {
+            python.enable = true;
             solidity = {
               enable = true;
               foundry.enable = true;
