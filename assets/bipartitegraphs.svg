@@ -1,0 +1,210 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1000">
+  <!-- Title -->
+  <text x="450" y="30" font-family="Arial" font-size="24" font-weight="bold" text-anchor="middle">Test Cases for Bipartite Graph Verification</text>
+  
+  <!-- Line Graph (0-1-2-3) -->
+  <g transform="translate(150, 100)">
+    <text x="100" y="0" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle">Line Graph</text>
+    <text x="100" y="20" font-family="Arial" font-size="12" text-anchor="middle">Valid: Colors [0,1,0,1]</text>
+    
+    <!-- Nodes -->
+    <circle cx="25" cy="70" r="20" fill="#97CBFF" stroke="black" stroke-width="2" />
+    <circle cx="95" cy="70" r="20" fill="#FFB6C1" stroke="black" stroke-width="2" />
+    <circle cx="165" cy="70" r="20" fill="#97CBFF" stroke="black" stroke-width="2" />
+    <circle cx="235" cy="70" r="20" fill="#FFB6C1" stroke="black" stroke-width="2" />
+    
+    <!-- Edges -->
+    <line x1="45" y1="70" x2="75" y2="70" stroke="black" stroke-width="2" />
+    <line x1="115" y1="70" x2="145" y2="70" stroke="black" stroke-width="2" />
+    <line x1="185" y1="70" x2="215" y2="70" stroke="black" stroke-width="2" />
+    
+    <!-- Node labels -->
+    <text x="25" y="75" font-family="Arial" font-size="16" text-anchor="middle">0</text>
+    <text x="95" y="75" font-family="Arial" font-size="16" text-anchor="middle">1</text>
+    <text x="165" y="75" font-family="Arial" font-size="16" text-anchor="middle">2</text>
+    <text x="235" y="75" font-family="Arial" font-size="16" text-anchor="middle">3</text>
+  </g>
+  
+  <!-- Star Graph -->
+  <g transform="translate(550, 100)">
+    <text x="100" y="0" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle">Star Graph</text>
+    <text x="100" y="20" font-family="Arial" font-size="12" text-anchor="middle">Valid: Colors [0,1,1,1]</text>
+    
+    <!-- Nodes -->
+    <circle cx="100" cy="70" r="20" fill="#97CBFF" stroke="black" stroke-width="2" />
+    <circle cx="25" cy="70" r="20" fill="#FFB6C1" stroke="black" stroke-width="2" />
+    <circle cx="100" cy="145" r="20" fill="#FFB6C1" stroke="black" stroke-width="2" />
+    <circle cx="175" cy="70" r="20" fill="#FFB6C1" stroke="black" stroke-width="2" />
+    
+    <!-- Edges -->
+    <line x1="80" y1="70" x2="45" y2="70" stroke="black" stroke-width="2" />
+    <line x1="100" y1="90" x2="100" y2="125" stroke="black" stroke-width="2" />
+    <line x1="120" y1="70" x2="155" y2="70" stroke="black" stroke-width="2" />
+    
+    <!-- Node labels -->
+    <text x="100" y="75" font-family="Arial" font-size="16" text-anchor="middle">0</text>
+    <text x="25" y="75" font-family="Arial" font-size="16" text-anchor="middle">1</text>
+    <text x="100" y="150" font-family="Arial" font-size="16" text-anchor="middle">2</text>
+    <text x="175" y="75" font-family="Arial" font-size="16" text-anchor="middle">3</text>
+  </g>
+  
+  <!-- Complete Bipartite K(2,2) -->
+  <g transform="translate(150, 250)">
+    <text x="100" y="0" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle">Complete Bipartite K(2,2)</text>
+    <text x="100" y="20" font-family="Arial" font-size="12" text-anchor="middle">Valid: Colors [0,0,1,1]</text>
+    
+    <!-- Nodes -->
+    <circle cx="50" cy="50" r="20" fill="#97CBFF" stroke="black" stroke-width="2" />
+    <circle cx="50" cy="120" r="20" fill="#97CBFF" stroke="black" stroke-width="2" />
+    <circle cx="150" cy="50" r="20" fill="#FFB6C1" stroke="black" stroke-width="2" />
+    <circle cx="150" cy="120" r="20" fill="#FFB6C1" stroke="black" stroke-width="2" />
+    
+    <!-- Edges -->
+    <line x1="50" y1="50" x2="150" y2="50" stroke="black" stroke-width="2" />
+    <line x1="50" y1="50" x2="150" y2="120" stroke="black" stroke-width="2" />
+    <line x1="50" y1="120" x2="150" y2="50" stroke="black" stroke-width="2" />
+    <line x1="50" y1="120" x2="150" y2="120" stroke="black" stroke-width="2" />
+    
+    <!-- Node labels -->
+    <text x="50" y="55" font-family="Arial" font-size="16" text-anchor="middle">0</text>
+    <text x="50" y="125" font-family="Arial" font-size="16" text-anchor="middle">1</text>
+    <text x="150" y="55" font-family="Arial" font-size="16" text-anchor="middle">2</text>
+    <text x="150" y="125" font-family="Arial" font-size="16" text-anchor="middle">3</text>
+  </g>
+  
+  <!-- Disconnected Graph -->
+  <g transform="translate(550, 250)">
+    <text x="100" y="0" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle">Disconnected Graph</text>
+    <text x="100" y="20" font-family="Arial" font-size="12" text-anchor="middle">Valid: Colors [0,1,0,1]</text>
+    
+    <!-- Nodes -->
+    <circle cx="50" cy="70" r="20" fill="#97CBFF" stroke="black" stroke-width="2" />
+    <circle cx="120" cy="70" r="20" fill="#FFB6C1" stroke="black" stroke-width="2" />
+    <circle cx="150" cy="110" r="20" fill="#97CBFF" stroke="black" stroke-width="2" />
+    <circle cx="200" cy="70" r="20" fill="#FFB6C1" stroke="black" stroke-width="2" />
+    
+    <!-- Edges -->
+    <line x1="70" y1="70" x2="100" y2="70" stroke="black" stroke-width="2" />
+    <line x1="150" y1="90" x2="180" y2="75" stroke="black" stroke-width="2" />
+    
+    <!-- Node labels -->
+    <text x="50" y="75" font-family="Arial" font-size="16" text-anchor="middle">0</text>
+    <text x="120" y="75" font-family="Arial" font-size="16" text-anchor="middle">1</text>
+    <text x="150" y="115" font-family="Arial" font-size="16" text-anchor="middle">2</text>
+    <text x="200" y="75" font-family="Arial" font-size="16" text-anchor="middle">3</text>
+  </g>
+  
+  <!-- Empty Graph -->
+  <g transform="translate(150, 420)">
+    <text x="100" y="0" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle">Empty Graph</text>
+    <text x="100" y="20" font-family="Arial" font-size="12" text-anchor="middle">Valid: Colors [0,0,0,0]</text>
+    
+    <!-- Nodes -->
+    <circle cx="50" cy="50" r="20" fill="#97CBFF" stroke="black" stroke-width="2" />
+    <circle cx="150" cy="50" r="20" fill="#97CBFF" stroke="black" stroke-width="2" />
+    <circle cx="50" cy="120" r="20" fill="#97CBFF" stroke="black" stroke-width="2" />
+    <circle cx="150" cy="120" r="20" fill="#97CBFF" stroke="black" stroke-width="2" />
+    
+    <!-- No Edges -->
+    
+    <!-- Node labels -->
+    <text x="50" y="55" font-family="Arial" font-size="16" text-anchor="middle">0</text>
+    <text x="150" y="55" font-family="Arial" font-size="16" text-anchor="middle">1</text>
+    <text x="50" y="125" font-family="Arial" font-size="16" text-anchor="middle">2</text>
+    <text x="150" y="125" font-family="Arial" font-size="16" text-anchor="middle">3</text>
+  </g>
+  
+  <!-- Triangle (Invalid) -->
+  <g transform="translate(550, 420)">
+    <text x="100" y="0" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle">Triangle</text>
+    <text x="100" y="20" font-family="Arial" font-size="12" text-anchor="middle">Invalid: Colors [0,1,0,0]</text>
+    
+    <!-- Nodes -->
+    <circle cx="100" cy="40" r="20" fill="#97CBFF" stroke="black" stroke-width="2" />
+    <circle cx="40" cy="100" r="20" fill="#FFB6C1" stroke="black" stroke-width="2" />
+    <circle cx="160" cy="100" r="20" fill="#97CBFF" stroke="black" stroke-width="2" />
+    <circle cx="100" cy="160" r="20" fill="#97CBFF" stroke="black" stroke-width="2" />
+    
+    <!-- Edges -->
+    <line x1="85" y1="52" x2="55" y2="88" stroke="black" stroke-width="2" />
+    <line x1="115" y1="52" x2="145" y2="88" stroke="black" stroke-width="2" />
+    <line x1="55" y1="112" x2="145" y2="112" stroke="black" stroke-width="2" />
+    
+    <!-- Node labels -->
+    <text x="100" y="45" font-family="Arial" font-size="16" text-anchor="middle">0</text>
+    <text x="40" y="105" font-family="Arial" font-size="16" text-anchor="middle">1</text>
+    <text x="160" y="105" font-family="Arial" font-size="16" text-anchor="middle">2</text>
+    <text x="100" y="165" font-family="Arial" font-size="16" text-anchor="middle">3</text>
+    
+    <!-- Problematic edge highlight -->
+    <line x1="85" y1="52" x2="145" y2="88" stroke="red" stroke-width="4" stroke-opacity="0.4" />
+  </g>
+  
+  <!-- Square with Diagonal (Invalid) -->
+  <g transform="translate(150, 600)">
+    <text x="100" y="0" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle">Square with Diagonal</text>
+    <text x="100" y="20" font-family="Arial" font-size="12" text-anchor="middle">Invalid: Colors [0,1,1,0]</text>
+    
+    <!-- Nodes -->
+    <circle cx="50" cy="50" r="20" fill="#97CBFF" stroke="black" stroke-width="2" />
+    <circle cx="150" cy="50" r="20" fill="#FFB6C1" stroke="black" stroke-width="2" />
+    <circle cx="150" cy="150" r="20" fill="#FFB6C1" stroke="black" stroke-width="2" />
+    <circle cx="50" cy="150" r="20" fill="#97CBFF" stroke="black" stroke-width="2" />
+    
+    <!-- Edges -->
+    <line x1="50" y1="50" x2="150" y2="50" stroke="black" stroke-width="2" />
+    <line x1="150" y1="50" x2="150" y2="150" stroke="black" stroke-width="2" />
+    <line x1="150" y1="150" x2="50" y2="150" stroke="black" stroke-width="2" />
+    <line x1="50" y1="150" x2="50" y2="50" stroke="black" stroke-width="2" />
+    <!-- Diagonal -->
+    <line x1="50" y1="50" x2="150" y2="150" stroke="black" stroke-width="2" />
+    
+    <!-- Node labels -->
+    <text x="50" y="55" font-family="Arial" font-size="16" text-anchor="middle">0</text>
+    <text x="150" y="55" font-family="Arial" font-size="16" text-anchor="middle">1</text>
+    <text x="150" y="155" font-family="Arial" font-size="16" text-anchor="middle">2</text>
+    <text x="50" y="155" font-family="Arial" font-size="16" text-anchor="middle">3</text>
+    
+    <!-- Problem visualization -->
+    <path d="M 50,50 L 150,50 L 150,150 Z" fill="red" opacity="0.2" />
+  </g>
+  
+  <!-- Invalid Coloring (Invalid) -->
+  <g transform="translate(550, 600)">
+    <text x="100" y="0" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle">Invalid Coloring</text>
+    <text x="100" y="20" font-family="Arial" font-size="12" text-anchor="middle">Invalid: Colors [0,0,1,0]</text>
+    
+    <!-- Nodes -->
+    <circle cx="25" cy="70" r="20" fill="#97CBFF" stroke="black" stroke-width="2" />
+    <circle cx="95" cy="70" r="20" fill="#97CBFF" stroke="black" stroke-width="2" />
+    <circle cx="165" cy="70" r="20" fill="#FFB6C1" stroke="black" stroke-width="2" />
+    <circle cx="235" cy="70" r="20" fill="#97CBFF" stroke="black" stroke-width="2" />
+    
+    <!-- Edges -->
+    <line x1="45" y1="70" x2="75" y2="70" stroke="black" stroke-width="2" />
+    <line x1="115" y1="70" x2="145" y2="70" stroke="black" stroke-width="2" />
+    <line x1="185" y1="70" x2="215" y2="70" stroke="black" stroke-width="2" />
+    
+    <!-- Node labels -->
+    <text x="25" y="75" font-family="Arial" font-size="16" text-anchor="middle">0</text>
+    <text x="95" y="75" font-family="Arial" font-size="16" text-anchor="middle">1</text>
+    <text x="165" y="75" font-family="Arial" font-size="16" text-anchor="middle">2</text>
+    <text x="235" y="75" font-family="Arial" font-size="16" text-anchor="middle">3</text>
+    
+    <!-- Problem visualization -->
+    <line x1="45" y1="70" x2="75" y2="70" stroke="red" stroke-width="4" stroke-opacity="0.7" />
+  </g>
+  
+  <!-- Additional info -->
+  <g transform="translate(450, 780)">
+    <text x="0" y="0" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle">Color Legend</text>
+    <circle cx="-80" cy="25" r="15" fill="#97CBFF" stroke="black" stroke-width="2" />
+    <text x="-50" y="30" font-family="Arial" font-size="14">Color 0</text>
+    
+    <circle cx="50" cy="25" r="15" fill="#FFB6C1" stroke="black" stroke-width="2" />
+    <text x="80" y="30" font-family="Arial" font-size="14">Color 1</text>
+    
+    <line x1="-80" y1="60" x2="-50" y2="60" stroke="red" stroke-width="4" stroke-opacity="0.7" />
+    <text x="10" y="65" font-family="Arial" font-size="14">Constraint violation</text>
+  </g>
+</svg>
